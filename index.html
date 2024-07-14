@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>example</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .card-container {
+            perspective: 1000px; /* 设置3D视角 */
+        }
+
+        .card {
+            width: 200px;
+            height: 300px;
+            position: relative;
+            transform-style: preserve-3d; /* 保留3D效果 */
+            transform: rotateY(0deg);
+            transition: transform 0.6s; /* 过渡效果 */
+        }
+
+        .card:hover {
+            transform: rotateY(180deg); /* 翻转效果 */
+        }
+
+        .card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden; /* 隐藏背面 */
+        }
+
+        .front {
+            background-color: #ffcc00;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+        }
+
+        .back {
+            background-color: #ff6600;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+<body>
+<div class="card-container">
+    <div class="card">
+        <div class="card-face front">
+            正面
+        </div>
+        <div class="card-face back">
+            背面
+        </div>
+    </div>
+</div>
+</body>
+</html>
